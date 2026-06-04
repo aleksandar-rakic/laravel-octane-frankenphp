@@ -1,0 +1,17 @@
+{
+	{$FRANKENPHP_CONFIG}
+}
+
+{$SERVER_NAME:localhost} {
+	log {
+		format json
+	}
+
+	encode zstd br gzip
+
+	root * /app/public
+
+	php_server {
+		resolve_root_symlink
+	}
+}
